@@ -42,6 +42,9 @@ The string `ORIGIN_COMMIT` is replaced by `$REPOSITORY_URL@commit`.
 ### `target-directory` (argument) [optional]
 The directory to wipe and replace in the target repository.  Defaults to wiping the entire repository
 
+### `target-tag` (argument) [optional]
+The tag name for the destination repository. Optional
+
 ### `API_TOKEN_GITHUB` (environment)
 E.g.:
   `API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}`
