@@ -110,6 +110,9 @@ git diff-index --quiet HEAD || git commit --message "$COMMIT_MESSAGE"
 
 if [ ! -z "$TARGET_TAG" ]
 then
+	echo "[+] Create tag"
+	git tag "$TARGET_TAG"
+
 	echo "[+] Pushing git commit with tag"
 	# --set-upstream: sets de branch when pushing to a branch that does not exist
 	git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git" --set-upstream "$TARGET_BRANCH" "$TARGET_TAG"
