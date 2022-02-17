@@ -112,9 +112,9 @@ echo "[+] Pushing git commit"
 # --set-upstream: sets de branch when pushing to a branch that does not exist
 git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git" --set-upstream "$TARGET_BRANCH"
 
-if [ -n "$TARGET_TAG" ]
+if [ ! -z "$TARGET_TAG" ]
 then
 	echo "[+] Pushing git tag"
-	git tag -a "$TARGET_BRANCH"
+	git tag -a "$TARGET_TAG"
 	git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git" --tags
 fi
